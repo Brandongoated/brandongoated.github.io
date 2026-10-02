@@ -18,5 +18,6 @@ My personal portfolio site, published with GitHub Pages.
 - `poker-coach.html` write-up of the Poker Coach project
 - `styles.css` the styling for all three pages
 - `poker-table.jpg` screenshot used on the Poker Coach pages
+- `headshot.jpg` my photo on the home page
 
 Plain HTML and CSS. No build step.
