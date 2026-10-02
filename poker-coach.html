@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poker Coach | Brandon Kestin</title>
+  <meta name="description" content="Poker Coach is a poker trainer with a voice AI coach, designed by Brandon Kestin and built by directing AI coding agents.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23b3002d'/%3E%3Ctext x='32' y='43' font-family='Georgia, serif' font-size='30' font-weight='700' text-anchor='middle' fill='white'%3EBK%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="index.html">Brandon Kestin</a>
+      <nav class="nav" aria-label="Sections">
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap article">
+    <a class="back" href="index.html#projects">&larr; Back to projects</a>
+    <p class="eyebrow">Personal project, 2026</p>
+    <h1>Poker Coach</h1>
+    <p class="summary">A poker trainer that plays like my real home game and has a coach that talks back, so I can find the mistakes I keep making and fix them.</p>
+
+    <figure class="shot">
+      <a href="poker-table.jpg" target="_blank" rel="noopener"><img src="poker-table.jpg" alt="Screenshot of the Poker Coach table: five seats around a green table, betting buttons along the bottom and a coach panel on the right"></a>
+      <figcaption>The table. Four computer opponents, betting buttons along the bottom, and the coach panel on the right.</figcaption>
+    </figure>
+
+    <dl class="facts">
+      <div class="card"><dt>What it is</dt><dd>Five seat no-limit hold'em trainer</dd></div>
+      <div class="card"><dt>Built with</dt><dd>Python and a browser front end</dd></div>
+      <div class="card"><dt>My role</dt><dd>Design, direction, testing</dd></div>
+      <div class="card"><dt>Status</dt><dd>Finished and in use</dd></div>
+    </dl>
+
+    <h2>Why I made it</h2>
+    <p>I play in a regular home game and I know I have a couple of habits that cost me money. Reading about poker did not fix them. I wanted something that would catch me in the act, in a game that feels like the one I actually play in.</p>
+
+    <h2>How it works</h2>
+    <ul>
+      <li><strong>Four opponents with different styles.</strong> Each computer player has its own way of playing, and the table never tells you which is which. You have to read them, the same as real people.</li>
+      <li><strong>A coach that asks why.</strong> When a decision looks like one of my known mistakes, the game pauses and the coach asks me, out loud, why I did it. I answer by voice or by typing, and it corrects me.</li>
+      <li><strong>A recap after every hand.</strong> What was good, what was bad, in plain words.</li>
+      <li><strong>A report that tracks mistakes over time.</strong> It shows my repeated mistakes, roughly what each one costs, and whether each is shrinking from one session to the next. It also grades how well I read each opponent.</li>
+    </ul>
+
+    <h2>How I built it</h2>
+    <p>I am a marketing major, not a programmer. I planned the product, wrote down exactly how it should behave, and directed AI coding agents that wrote the code. Then I tested it by playing and sent back corrections until it felt right.</p>
+    <p>A few things I insisted on so I could trust it:</p>
+    <ul>
+      <li>The part that decides which hand wins was checked against every possible five card poker hand, all 2,598,960 of them.</li>
+      <li>It has automated tests, which are small programs that re-check the rules every time something changes.</li>
+      <li>It runs entirely on my own computer. If the coach goes offline, the game says so and keeps going instead of pretending everything is fine.</li>
+    </ul>
+
+    <h2>What I took from it</h2>
+    <ul>
+      <li>You do not need to code to ship software, but you do need to be exact about what you want</li>
+      <li>How to break a big idea into pieces small enough to build and check one at a time</li>
+      <li>AI output has to be tested, not trusted. The first version of almost everything needed a correction</li>
+    </ul>
+
+    <p class="note">The code is not public yet. I'm happy to demo it or walk through how it was built: <a href="mailto:brandongkestin@gmail.com">brandongkestin@gmail.com</a>.</p>
+  </main>
+
+  <footer>
+    <div class="wrap">Brandon Kestin, 2026. <a href="index.html">Back to the home page</a></div>
+  </footer>
+
+</body>
+</html>
