@@ -43,16 +43,42 @@ body {
   font-size: 17px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
   max-width: 100%;
   display: block;
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  outline-offset: -1px;
+}
+
+@media (prefers-color-scheme: dark) {
+  img {
+    outline-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+h1,
+h2,
+h3,
+.statement,
+.summary {
+  text-wrap: balance;
+}
+
+p,
+li,
+figcaption {
+  text-wrap: pretty;
 }
 
 a {
   color: var(--accent);
   text-underline-offset: 3px;
+  transition-property: color, text-decoration-color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
 }
 
 a:focus-visible,
@@ -87,6 +113,9 @@ a:focus-visible,
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-family: var(--serif);
   font-size: 1.15rem;
   font-weight: 700;
@@ -98,11 +127,15 @@ a:focus-visible,
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 20px;
+  gap: 0 14px;
   justify-content: flex-end;
 }
 
 .nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
   color: var(--muted);
   text-decoration: none;
   font-size: 0.95rem;
@@ -161,6 +194,19 @@ h1 {
   font-weight: 600;
   font-size: 0.98rem;
   text-decoration: none;
+  min-height: 44px;
+  transition-property: transform, filter, background-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.button.ghost:hover {
+  background: var(--accent-soft);
+  filter: none;
 }
 
 .button.ghost {
@@ -260,6 +306,14 @@ h3 {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition-property: transform, box-shadow, border-color;
+  transition-duration: 200ms;
+  transition-timing-function: ease-out;
+}
+
+.project:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
 }
 
 .project-art {
@@ -357,10 +411,18 @@ h3 {
   font-size: 0.82rem;
 }
 
+.links a,
+.contact-list a,
+.article .back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+}
+
 .links {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 20px;
+  gap: 0 20px;
   margin-top: auto;
   font-weight: 600;
   font-size: 0.97rem;
@@ -415,8 +477,7 @@ footer {
 }
 
 .article .back {
-  display: inline-block;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
@@ -516,16 +577,71 @@ footer {
   }
 
   .nav {
-    gap: 2px 14px;
+    flex-wrap: nowrap;
+    gap: 0 6px;
   }
 
   .nav a {
-    font-size: 0.9rem;
+    padding: 0 3px;
+    font-size: 0.84rem;
   }
+
+  .brand {
+    font-size: 1rem;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero > *,
+.article > .eyebrow,
+.article > h1,
+.article > .summary {
+  animation: rise 500ms ease-out both;
+}
+
+.hero > :nth-child(2),
+.article > h1 {
+  animation-delay: 60ms;
+}
+
+.hero > :nth-child(3),
+.article > .summary {
+  animation-delay: 120ms;
+}
+
+.hero > :nth-child(4) {
+  animation-delay: 180ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .hero > *,
+  .article > .eyebrow,
+  .article > h1,
+  .article > .summary {
+    animation: none;
+  }
+
+  .button,
+  .project {
+    transition: none;
+  }
+
+  .button:active,
+  .project:hover {
+    transform: none;
   }
 }
